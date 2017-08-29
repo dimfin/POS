@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- App styling -->
+    
+    <!-- MainView style-->
+    <Style x:Key="mainViewStyle" TargetType="Window">
+        <Setter Property="Height" Value="570" />
+        <Setter Property="Width" Value="800" />
+        <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
+        <Setter Property="ResizeMode" Value="NoResize" />
+    </Style>
+    
+    <!-- standard button -->
+    <Style x:Key="okButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Margin" Value="20" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+
+    <!-- mainView StackPanel style -->
+    <Style TargetType="StackPanel">
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
+    <!-- DataGrid style -->
+    <Style TargetType="DataGrid">
+        <Setter Property="CanUserReorderColumns" Value="False" />
+        <Setter Property="CanUserResizeColumns" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="Height" Value="350" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Style.Resources>
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="#ddd"/>
+                <Setter Property="Foreground" Value="#26b" />
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight"  Value="Bold" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="AllowDrop" Value="False" />
+            </Style>
+            <Style TargetType="DataGridRow">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Padding" Value="10" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="RightAligned" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <!-- Total sum grid style  -->
+    <Style x:Key="totalSumStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#48e" />
+        <Style.Resources>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="FontFamily" Value="Verdana" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="Foreground" Value="#eee"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="inputGridStyle" TargetType="Grid">
+        <Style.Resources>
+            <Style TargetType="ComboBox">
+                <Style.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="16" />
+                        <Setter Property="FontWeight" Value="Regular"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="HorizontalContentAlignment" Value="Right" />
+                <Setter Property="Padding" Value="3" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#f00"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <!-- payView style -->
+    <Style x:Key="payViewStyle" TargetType="Window">
+        <Setter Property="Height" Value="250" />
+        <Setter Property="Width" Value="400" />
+        <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
+        <Setter Property="ResizeMode" Value="NoResize" />
+    </Style>
+
+    <!-- payView Grid style -->
+    <Style x:Key="payViewGrid" TargetType="Grid">
+        <Setter Property="Background" Value="White"/>
+        <Style.Resources>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="FontFamily" Value="Verdana" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="FontFamily" Value="Verdana" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                <Setter Property="Margin" Value="0, 5, 0, 5"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="3" />
+                    </Style>
+                </Style.Resources>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+</ResourceDictionary>

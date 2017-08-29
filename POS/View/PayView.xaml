@@ -1,0 +1,34 @@
+﻿<Window x:Class="POS.View.PayView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POS.View"
+        mc:Ignorable="d"
+        Title="Payment details"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource payViewStyle}">
+
+    <StackPanel Orientation="Vertical">
+        <Grid Style="{StaticResource payViewGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Итого:" />
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding TotalSum}" ContentStringFormat="C" HorizontalAlignment="Right"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Получено:" />
+            <TextBox Grid.Row="1"  Grid.Column="1" Text="{Binding GivenSum, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Сдача:" />
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Difference}" ContentStringFormat="C"  HorizontalAlignment="Right"/>
+        </Grid>
+
+        <Button IsCancel="True" Style="{StaticResource okButtonStyle}">Оплачено</Button>
+    </StackPanel>
+
+</Window>

@@ -1,0 +1,691 @@
+Opened connection at 8/29/2017 4:55:13 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 4:55:13 PM +09:00
+-- Completed in 3 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 4:55:13 PM +09:00
+Opened connection at 8/29/2017 4:55:13 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 4:55:13 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 4:55:13 PM +09:00
+Opened connection at 8/29/2017 4:55:13 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 4:55:13 PM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 4:55:13 PM +09:00
+Opened connection at 8/29/2017 4:55:30 PM +09:00
+Started transaction at 8/29/2017 4:55:30 PM +09:00
+UPDATE `Products` SET `WarehouseQuantity`=7.00 WHERE `ProductId` = 1
+-- Executing at 8/29/2017 4:55:30 PM +09:00
+-- Completed in 0 ms with result: 1
+
+UPDATE `Products` SET `WarehouseQuantity`=8.00 WHERE `ProductId` = 3
+-- Executing at 8/29/2017 4:55:30 PM +09:00
+-- Completed in 0 ms with result: 1
+
+SET SESSION sql_mode='ANSI';INSERT INTO `Sales`(
+`Date`) VALUES (
+@gp1);
+SELECT
+`SaleId`
+FROM `Sales`
+ WHERE  row_count() > 0 AND `SaleId`=last_insert_id()
+-- @gp1: '8/29/2017 4:55:30 PM' (Type = DateTime, IsNullable = false)
+-- Executing at 8/29/2017 4:55:30 PM +09:00
+-- Completed in 3 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+1, 
+1, 
+15);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/29/2017 4:55:30 PM +09:00
+-- Completed in 56 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+2, 
+3, 
+15);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/29/2017 4:55:30 PM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+Committed transaction at 8/29/2017 4:55:30 PM +09:00
+Closed connection at 8/29/2017 4:55:30 PM +09:00
+Disposed transaction at 8/29/2017 4:55:30 PM +09:00
+Opened connection at 8/29/2017 7:49:27 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 7:49:27 PM +09:00
+-- Completed in 4 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 7:49:27 PM +09:00
+Opened connection at 8/29/2017 7:49:27 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 7:49:27 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 7:49:27 PM +09:00
+Opened connection at 8/29/2017 7:49:27 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 7:49:27 PM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 7:49:27 PM +09:00
+Opened connection at 8/29/2017 11:48:59 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:48:59 PM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:49:00 PM +09:00
+Opened connection at 8/29/2017 11:49:00 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:49:00 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:49:00 PM +09:00
+Opened connection at 8/29/2017 11:49:00 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 11:49:00 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:49:00 PM +09:00
+Opened connection at 8/29/2017 11:50:24 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:50:24 PM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:50:24 PM +09:00
+Opened connection at 8/29/2017 11:50:24 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:50:24 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:50:24 PM +09:00
+Opened connection at 8/29/2017 11:50:24 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 11:50:24 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:50:24 PM +09:00
+Opened connection at 8/29/2017 11:50:44 PM +09:00
+Started transaction at 8/29/2017 11:50:44 PM +09:00
+UPDATE `Products` SET `WarehouseQuantity`=7.00 WHERE `ProductId` = 2
+-- Executing at 8/29/2017 11:50:44 PM +09:00
+-- Completed in 790 ms with result: 1
+
+SET SESSION sql_mode='ANSI';INSERT INTO `Sales`(
+`Date`) VALUES (
+@gp1);
+SELECT
+`SaleId`
+FROM `Sales`
+ WHERE  row_count() > 0 AND `SaleId`=last_insert_id()
+-- @gp1: '8/29/2017 11:50:44 PM' (Type = DateTime, IsNullable = false)
+-- Executing at 8/29/2017 11:50:45 PM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+2, 
+2, 
+16);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/29/2017 11:50:45 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Committed transaction at 8/29/2017 11:50:45 PM +09:00
+Closed connection at 8/29/2017 11:50:45 PM +09:00
+Disposed transaction at 8/29/2017 11:50:45 PM +09:00
+Opened connection at 8/29/2017 11:55:57 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:55:57 PM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:55:57 PM +09:00
+Opened connection at 8/29/2017 11:55:57 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:55:57 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:55:57 PM +09:00
+Opened connection at 8/29/2017 11:55:57 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 11:55:57 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:55:57 PM +09:00
+Opened connection at 8/29/2017 11:56:17 PM +09:00
+Started transaction at 8/29/2017 11:56:17 PM +09:00
+UPDATE `Products` SET `WarehouseQuantity`=5.00 WHERE `ProductId` = 2
+-- Executing at 8/29/2017 11:56:17 PM +09:00
+-- Completed in 0 ms with result: 1
+
+SET SESSION sql_mode='ANSI';INSERT INTO `Sales`(
+`Date`) VALUES (
+@gp1);
+SELECT
+`SaleId`
+FROM `Sales`
+ WHERE  row_count() > 0 AND `SaleId`=last_insert_id()
+-- @gp1: '8/29/2017 11:56:17 PM' (Type = DateTime, IsNullable = false)
+-- Executing at 8/29/2017 11:56:17 PM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+2, 
+2, 
+17);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/29/2017 11:56:17 PM +09:00
+-- Completed in 39 ms with result: EFMySqlDataReader
+
+Committed transaction at 8/29/2017 11:56:17 PM +09:00
+Closed connection at 8/29/2017 11:56:17 PM +09:00
+Disposed transaction at 8/29/2017 11:56:17 PM +09:00
+Opened connection at 8/29/2017 11:57:29 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:57:29 PM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:57:29 PM +09:00
+Opened connection at 8/29/2017 11:57:29 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:57:29 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:57:29 PM +09:00
+Opened connection at 8/29/2017 11:57:29 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 11:57:29 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:57:29 PM +09:00
+Opened connection at 8/29/2017 11:58:19 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:58:19 PM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:58:19 PM +09:00
+Opened connection at 8/29/2017 11:58:19 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:58:19 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:58:19 PM +09:00
+Opened connection at 8/29/2017 11:58:19 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 11:58:19 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:58:19 PM +09:00
+Opened connection at 8/29/2017 11:59:42 PM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:59:42 PM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:59:42 PM +09:00
+Opened connection at 8/29/2017 11:59:42 PM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/29/2017 11:59:42 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:59:42 PM +09:00
+Opened connection at 8/29/2017 11:59:42 PM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/29/2017 11:59:42 PM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/29/2017 11:59:42 PM +09:00
+Opened connection at 8/30/2017 12:06:38 AM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/30/2017 12:06:38 AM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:06:38 AM +09:00
+Opened connection at 8/30/2017 12:06:38 AM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/30/2017 12:06:38 AM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:06:38 AM +09:00
+Opened connection at 8/30/2017 12:06:38 AM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/30/2017 12:06:38 AM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:06:38 AM +09:00
+Opened connection at 8/30/2017 12:07:30 AM +09:00
+Started transaction at 8/30/2017 12:07:30 AM +09:00
+UPDATE `Products` SET `WarehouseQuantity`=12.00 WHERE `ProductId` = 1
+-- Executing at 8/30/2017 12:07:30 AM +09:00
+-- Completed in 0 ms with result: 1
+
+SET SESSION sql_mode='ANSI';INSERT INTO `Sales`(
+`Date`) VALUES (
+@gp1);
+SELECT
+`SaleId`
+FROM `Sales`
+ WHERE  row_count() > 0 AND `SaleId`=last_insert_id()
+-- @gp1: '8/30/2017 12:07:30 AM' (Type = DateTime, IsNullable = false)
+-- Executing at 8/30/2017 12:07:30 AM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+-5, 
+1, 
+18);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/30/2017 12:07:30 AM +09:00
+-- Completed in 28 ms with result: EFMySqlDataReader
+
+Committed transaction at 8/30/2017 12:07:30 AM +09:00
+Closed connection at 8/30/2017 12:07:30 AM +09:00
+Disposed transaction at 8/30/2017 12:07:30 AM +09:00
+Opened connection at 8/30/2017 12:07:54 AM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/30/2017 12:07:54 AM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:07:54 AM +09:00
+Opened connection at 8/30/2017 12:07:54 AM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/30/2017 12:07:54 AM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:07:54 AM +09:00
+Opened connection at 8/30/2017 12:07:54 AM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/30/2017 12:07:54 AM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:07:54 AM +09:00
+Opened connection at 8/30/2017 12:08:03 AM +09:00
+Started transaction at 8/30/2017 12:08:03 AM +09:00
+SET SESSION sql_mode='ANSI';INSERT INTO `Sales`(
+`Date`) VALUES (
+@gp1);
+SELECT
+`SaleId`
+FROM `Sales`
+ WHERE  row_count() > 0 AND `SaleId`=last_insert_id()
+-- @gp1: '8/30/2017 12:08:03 AM' (Type = DateTime, IsNullable = false)
+-- Executing at 8/30/2017 12:08:03 AM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+0, 
+1, 
+19);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/30/2017 12:08:03 AM +09:00
+-- Completed in 59 ms with result: EFMySqlDataReader
+
+Committed transaction at 8/30/2017 12:08:03 AM +09:00
+Closed connection at 8/30/2017 12:08:03 AM +09:00
+Disposed transaction at 8/30/2017 12:08:03 AM +09:00
+Opened connection at 8/30/2017 12:09:07 AM +09:00
+SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/30/2017 12:09:07 AM +09:00
+-- Completed in 2 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:09:07 AM +09:00
+Opened connection at 8/30/2017 12:09:07 AM +09:00
+SELECT
+`Project1`.`C1`, 
+`Project1`.`MigrationId`, 
+`Project1`.`Model`, 
+`Project1`.`ProductVersion`
+FROM (SELECT
+`Extent1`.`MigrationId`, 
+`Extent1`.`Model`, 
+`Extent1`.`ProductVersion`, 
+1 AS `C1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `Project1`
+ ORDER BY 
+`Project1`.`MigrationId` DESC LIMIT 1
+-- p__linq__0: 'POS.DataProvider.SaleDbContext' (Type = String, Size = 30)
+-- Executing at 8/30/2017 12:09:07 AM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:09:07 AM +09:00
+Opened connection at 8/30/2017 12:09:07 AM +09:00
+SELECT
+`Extent1`.`ProductId`, 
+`Extent1`.`Name`, 
+`Extent1`.`Price`, 
+`Extent1`.`WarehouseQuantity`
+FROM `Products` AS `Extent1`
+-- Executing at 8/30/2017 12:09:07 AM +09:00
+-- Completed in 0 ms with result: EFMySqlDataReader
+
+Closed connection at 8/30/2017 12:09:07 AM +09:00
+Opened connection at 8/30/2017 12:09:13 AM +09:00
+Started transaction at 8/30/2017 12:09:13 AM +09:00
+UPDATE `Products` SET `WarehouseQuantity`=4.00 WHERE `ProductId` = 2
+-- Executing at 8/30/2017 12:09:13 AM +09:00
+-- Completed in 0 ms with result: 1
+
+SET SESSION sql_mode='ANSI';INSERT INTO `Sales`(
+`Date`) VALUES (
+@gp1);
+SELECT
+`SaleId`
+FROM `Sales`
+ WHERE  row_count() > 0 AND `SaleId`=last_insert_id()
+-- @gp1: '8/30/2017 12:09:13 AM' (Type = DateTime, IsNullable = false)
+-- Executing at 8/30/2017 12:09:13 AM +09:00
+-- Completed in 3 ms with result: EFMySqlDataReader
+
+SET SESSION sql_mode='ANSI';INSERT INTO `SaleRecords`(
+`Quantity`, 
+`ProductId`, 
+`SaleId`) VALUES (
+1, 
+2, 
+20);
+SELECT
+`SaleRecordId`
+FROM `SaleRecords`
+ WHERE  row_count() > 0 AND `SaleRecordId`=last_insert_id()
+-- Executing at 8/30/2017 12:09:13 AM +09:00
+-- Completed in 1 ms with result: EFMySqlDataReader
+
+Committed transaction at 8/30/2017 12:09:13 AM +09:00
+Closed connection at 8/30/2017 12:09:13 AM +09:00
+Disposed transaction at 8/30/2017 12:09:13 AM +09:00
