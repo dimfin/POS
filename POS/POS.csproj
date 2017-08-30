@@ -73,6 +73,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataProvider\EntitiesContextInitializer.cs" />
+    <Compile Include="ViewModel\PositiveDecimalValidationRule.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\PayViewModel.cs" />
     <Compile Include="View\PayView.xaml.cs">

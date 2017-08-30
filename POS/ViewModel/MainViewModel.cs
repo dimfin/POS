@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Windows.Input;
 
 namespace POS.ViewModel
 {
@@ -23,7 +24,7 @@ namespace POS.ViewModel
         // Selected product of Add Sale Record
         private Product selectedProduct;
         // Quantity of Add Sale Record 
-        private decimal quantity;
+        private decimal quantity = 1;
 
         #endregion
 
@@ -62,14 +63,16 @@ namespace POS.ViewModel
             {
                 quantity = value;
                 RaisePropertyChangedEvent("Quantity");
+                CommandManager.InvalidateRequerySuggested();
             }
         }
 
         // Add record button of Add Sale Record 
-        public RelayCommand AddRecord => new RelayCommand(AddSaleRecord);
+        public RelayCommand AddRecord => new RelayCommand(AddSaleRecord, CanAddRecord);
 
-        // PAy in cash button
+        // Pay in cash button
         public RelayCommand Pay => new RelayCommand(SaveSale);
+
         #endregion
 
         #region Constructors
@@ -120,7 +123,16 @@ namespace POS.ViewModel
 
             // Clear Add Sale Record controls
             SelectedProduct = null;
-            Quantity = 0;
+            Quantity = 1;
+        }
+
+        /// <summary>
+        /// Validate input
+        /// </summary>
+        /// <returns>False if new Sale Record is in false state</returns>
+        private bool CanAddRecord()
+        {
+            return SelectedProduct != null && Quantity > 0;
         }
 
         /// <summary>
@@ -141,7 +153,7 @@ namespace POS.ViewModel
             // prepare to next sale
             Records.Clear();
             SelectedProduct = null;
-            Quantity = 0;
+            Quantity = 1;
         }
     } 
     #endregion
