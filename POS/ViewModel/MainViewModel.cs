@@ -68,10 +68,10 @@ namespace POS.ViewModel
         }
 
         // Add record button of Add Sale Record 
-        public RelayCommand AddRecord => new RelayCommand(AddSaleRecord, CanAddRecord);
+        public RelayCommand AddRecord => new RelayCommand(AddSaleRecord, () => SelectedProduct != null && Quantity > 0);
 
         // Pay in cash button
-        public RelayCommand Pay => new RelayCommand(SaveSale);
+        public RelayCommand Pay => new RelayCommand(SaveSale, () => TotalSum > 0);
 
         #endregion
 
@@ -107,6 +107,7 @@ namespace POS.ViewModel
         private void Records_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             RaisePropertyChangedEvent("TotalSum");
+            CommandManager.InvalidateRequerySuggested();
         }
 
         /// <summary>
@@ -124,15 +125,6 @@ namespace POS.ViewModel
             // Clear Add Sale Record controls
             SelectedProduct = null;
             Quantity = 1;
-        }
-
-        /// <summary>
-        /// Validate input
-        /// </summary>
-        /// <returns>False if new Sale Record is in false state</returns>
-        private bool CanAddRecord()
-        {
-            return SelectedProduct != null && Quantity > 0;
         }
 
         /// <summary>

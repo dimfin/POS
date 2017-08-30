@@ -2,6 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- App styling -->
+    
+    <!-- text style -->
+    <Style TargetType="FrameworkElement" x:Key="textStyle">
+        <Setter Property="TextElement.FontFamily" Value="Verdana" />
+        <Setter Property="TextElement.FontSize" Value="14" />
+    </Style>
 
     <!-- MainView style-->
     <Style x:Key="mainViewStyle" TargetType="Window">
@@ -12,11 +18,11 @@
     </Style>
 
     <!-- standard button -->
-    <Style x:Key="okButtonStyle" TargetType="Button">
+    <Style x:Key="okButtonStyle" TargetType="Button" BasedOn="{StaticResource textStyle}">
         <Setter Property="Width" Value="200"/>
         <Setter Property="Padding" Value="5" />
         <Setter Property="Margin" Value="20" />
-        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextElement.FontSize" Value="18" />
     </Style>
 
     <!-- mainView StackPanel style -->
@@ -25,7 +31,7 @@
     </Style>
 
     <!-- DataGrid style -->
-    <Style TargetType="DataGrid">
+    <Style TargetType="DataGrid" BasedOn="{StaticResource textStyle}">
         <Setter Property="CanUserReorderColumns" Value="False" />
         <Setter Property="CanUserResizeColumns" Value="False"/>
         <Setter Property="CanUserResizeRows" Value="False"/>
@@ -35,14 +41,9 @@
             <Style TargetType="DataGridColumnHeader">
                 <Setter Property="Background" Value="#ddd"/>
                 <Setter Property="Foreground" Value="#26b" />
-                <Setter Property="FontSize" Value="14"/>
                 <Setter Property="FontWeight"  Value="Bold" />
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="AllowDrop" Value="False" />
-            </Style>
-            <Style TargetType="DataGridRow">
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="Padding" Value="10" />
             </Style>
         </Style.Resources>
     </Style>
@@ -52,12 +53,11 @@
     </Style>
 
     <!-- Total sum grid style  -->
-    <Style x:Key="totalSumStyle" TargetType="Grid">
+    <Style x:Key="totalSumStyle" TargetType="Grid" BasedOn="{StaticResource textStyle}">
         <Setter Property="Background" Value="#48e" />
         <Style.Resources>
             <Style TargetType="Label">
                 <Setter Property="HorizontalAlignment" Value="Right"/>
-                <Setter Property="FontFamily" Value="Verdana" />
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="Foreground" Value="#eee"/>
             </Style>
@@ -65,29 +65,26 @@
     </Style>
 
     <!-- Add Sale Record style -->
-    <Style x:Key="inputGridStyle" TargetType="Grid">
+    <Style x:Key="inputGridStyle" TargetType="Grid" BasedOn="{StaticResource textStyle}">
         <Style.Resources>
             <Style TargetType="ComboBox">
                 <Style.Resources>
                     <Style TargetType="Label">
-                        <Setter Property="FontSize" Value="16" />
                         <Setter Property="FontWeight" Value="Regular"/>
                         <Setter Property="Foreground" Value="Black"/>
                     </Style>
                 </Style.Resources>
             </Style>
             <Style TargetType="TextBox">
-                <Setter Property="FontSize" Value="16" />
                 <Setter Property="VerticalContentAlignment" Value="Center" />
-                <Setter Property="Margin" Value="5" />
                 <Setter Property="HorizontalContentAlignment" Value="Right" />
                 <Setter Property="Padding" Value="3" />
+                <Setter Property="Margin" Value="5" />
             </Style>
             <Style TargetType="Button">
                 <Setter Property="Background" Value="#48e" />
             </Style>
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="16" />
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="Foreground" Value="White"/>
             </Style>
@@ -102,18 +99,17 @@
         <Setter Property="ResizeMode" Value="NoResize" />
     </Style>
     
-    <!-- text style -->
-    <Style x:Key="payViewTextStyle" TargetType="{x:Type FrameworkElement}">
-        <Setter Property="TextElement.FontFamily" Value="Verdana" />
-        <Setter Property="TextElement.FontSize" Value="20" />
-        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Right"/>
+    <!-- payView text style -->
+    <Style x:Key="payViewTextStyle" TargetType="{x:Type FrameworkElement}"  BasedOn="{StaticResource textStyle}">
+        <Setter Property="TextElement.FontSize" Value="16" />
     </Style>
 
     <!-- payView TextBox style -->
     <Style TargetType="TextBox" x:Key="payViewTextBoxStyle" BasedOn="{StaticResource payViewTextStyle}">
-        <Setter Property="Margin" Value="0, 5, 0, 5"/>
         <Setter Property="Width" Value="120"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="3" />
@@ -127,10 +123,8 @@
     </Style>
 
     <!-- PayView Value style -->
-    <Style TargetType="Label" x:Key="payViewValueStyle" BasedOn="{StaticResource payViewTextStyle}"/>
-
-    <Style x:Key="test" TargetType="FrameworkContentElement">
-        <Setter Property="TextElement.Foreground" Value="red" />
+    <Style TargetType="Label" x:Key="payViewValueStyle" BasedOn="{StaticResource payViewTextStyle}">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
 
 </ResourceDictionary>

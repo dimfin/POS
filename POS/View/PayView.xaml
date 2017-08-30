@@ -30,10 +30,10 @@
                     <Style>
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding IsChangeNegative}" Value="False">
-                                <Setter Property="TextElement.FontFamily" Value="Verdana" />
-                                <Setter Property="TextElement.FontSize" Value="20" />
                                 <Setter Property="FrameworkElement.HorizontalAlignment" Value="Right"/>
                                 <Setter Property="TextElement.Foreground" Value="#e84" />
+                                <Setter Property="TextElement.FontSize" Value="16" />
+                                <Setter Property="TextElement.FontWeight" Value="Bold" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding IsChangeNegative}" Value="True">
                                 <Setter Property="FrameworkElement.Opacity" Value="0" />
