@@ -21,11 +21,26 @@ namespace POS.ViewModel.Tests
         }
 
         [TestMethod()]
-        public void PayViewModel_UpdateDifferenceTest()
+        public void PayViewModel_UpdateChangeTest()
         {
             var m = new PayViewModel(7);
             m.GivenSum = 10;
             Assert.AreEqual(3, m.Change);
+        }
+
+        [TestMethod()]
+        public void PayViewModel_ChangeModeTest()
+        {
+            var m = new PayViewModel(7);
+
+            // change is negative
+            Assert.IsTrue(m.IsChangeNegative);
+
+            m.GivenSum = 10m;
+
+            // change is negative
+            Assert.IsFalse(m.IsChangeNegative);
+
         }
     }
 }

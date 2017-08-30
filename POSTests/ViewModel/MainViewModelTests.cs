@@ -96,5 +96,50 @@ namespace POS.ViewModel.Tests
             // total sum has been updated
             Assert.AreEqual(0, m.TotalSum);
         }
+
+        [TestMethod()]
+        public void MainViewModel_ValidateAddNewRecordButtonTest()
+        {
+            var m = new MainViewModel(provider.Object);
+
+            m.SelectedProduct = null;
+
+            // product is not selected
+            Assert.IsFalse(m.AddRecord.CanExecute(0));
+
+            m.Quantity = 0;
+
+            // quantity is not positive
+            Assert.IsFalse(m.AddRecord.CanExecute(0));
+
+            m.Quantity = -1;
+
+            // quantity is not positive
+            Assert.IsFalse(m.AddRecord.CanExecute(0));
+
+            m.SelectedProduct = provider.Object.GetProducts().First();
+            m.Quantity = 1;
+
+            // quantity is not positive
+            Assert.IsTrue(m.AddRecord.CanExecute(0));
+        }
+
+        [TestMethod()]
+        public void MainViewModel_ValidatePayButtonTest()
+        {
+            var m = new MainViewModel(provider.Object);
+
+            // total sum = 0
+            Assert.IsFalse(m.Pay.CanExecute(0));
+
+            m.Records.Add(new SaleRecord
+            {
+                Product = provider.Object.GetProducts().First(),
+                Quantity = 1
+            });
+
+            // total sum > 0
+            Assert.IsTrue(m.Pay.CanExecute(0));
+        }
     }
 }
