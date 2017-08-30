@@ -19,7 +19,7 @@ namespace POS.ViewModel
         public decimal TotalSum { get; private set; }
 
         // calculated property. Change
-        public decimal Difference => GivenSum - TotalSum;
+        public decimal Change => GivenSum - TotalSum;
 
         // property for givenSum variable
         public decimal GivenSum
@@ -35,9 +35,12 @@ namespace POS.ViewModel
                 RaisePropertyChangedEvent("GivenSum");
 
                 // update Difference value
-                RaisePropertyChangedEvent("Difference");
+                RaisePropertyChangedEvent("Change");
+                RaisePropertyChangedEvent("IsChangeNegative");
             }
         }
+
+        public bool IsChangeNegative => Change < 0;
         #endregion
 
         #region Constructors

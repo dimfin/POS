@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- App styling -->
-    
+
     <!-- MainView style-->
     <Style x:Key="mainViewStyle" TargetType="Window">
         <Setter Property="Height" Value="570" />
@@ -10,7 +10,7 @@
         <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
         <Setter Property="ResizeMode" Value="NoResize" />
     </Style>
-    
+
     <!-- standard button -->
     <Style x:Key="okButtonStyle" TargetType="Button">
         <Setter Property="Width" Value="200"/>
@@ -94,35 +94,43 @@
         </Style.Resources>
     </Style>
 
-    <!-- payView style -->
+    <!-- payView window style -->
     <Style x:Key="payViewStyle" TargetType="Window">
         <Setter Property="Height" Value="250" />
         <Setter Property="Width" Value="400" />
         <Setter Property="WindowStyle" Value="SingleBorderWindow"/>
         <Setter Property="ResizeMode" Value="NoResize" />
     </Style>
+    
+    <!-- text style -->
+    <Style x:Key="payViewTextStyle" TargetType="{x:Type FrameworkElement}">
+        <Setter Property="TextElement.FontFamily" Value="Verdana" />
+        <Setter Property="TextElement.FontSize" Value="20" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Right"/>
+    </Style>
 
-    <!-- payView Grid style -->
-    <Style x:Key="payViewGrid" TargetType="Grid">
-        <Setter Property="Background" Value="White"/>
+    <!-- payView TextBox style -->
+    <Style TargetType="TextBox" x:Key="payViewTextBoxStyle" BasedOn="{StaticResource payViewTextStyle}">
+        <Setter Property="Margin" Value="0, 5, 0, 5"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
         <Style.Resources>
-            <Style TargetType="Label">
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="FontFamily" Value="Verdana" />
-                <Setter Property="FontSize" Value="20" />
-            </Style>
-            <Style TargetType="TextBox">
-                <Setter Property="FontFamily" Value="Verdana" />
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="HorizontalContentAlignment" Value="Right"/>
-                <Setter Property="Margin" Value="0, 5, 0, 5"/>
-                <Style.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="3" />
-                    </Style>
-                </Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="3" />
             </Style>
         </Style.Resources>
+    </Style>
+
+    <!-- PayView Label style -->
+    <Style TargetType="Label" x:Key="payViewLabelStyle" BasedOn="{StaticResource payViewTextStyle}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <!-- PayView Value style -->
+    <Style TargetType="Label" x:Key="payViewValueStyle" BasedOn="{StaticResource payViewTextStyle}"/>
+
+    <Style x:Key="test" TargetType="FrameworkContentElement">
+        <Setter Property="TextElement.Foreground" Value="red" />
     </Style>
 
 </ResourceDictionary>

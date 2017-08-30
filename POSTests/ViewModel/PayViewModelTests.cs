@@ -25,7 +25,7 @@ namespace POS.ViewModel.Tests
         {
             var m = new PayViewModel(7);
             m.GivenSum = 10;
-            Assert.AreEqual(3, m.Difference);
+            Assert.AreEqual(3, m.Change);
         }
     }
 }

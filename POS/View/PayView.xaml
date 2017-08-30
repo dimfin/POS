@@ -10,7 +10,7 @@
         Style="{StaticResource payViewStyle}">
 
     <StackPanel Orientation="Vertical">
-        <Grid Style="{StaticResource payViewGrid}">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="4*"/>
@@ -20,12 +20,28 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Итого:" />
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding TotalSum}" ContentStringFormat="C" HorizontalAlignment="Right"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="Получено:" />
-            <TextBox Grid.Row="1"  Grid.Column="1" Text="{Binding GivenSum, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" />
-            <Label Grid.Row="2" Grid.Column="0" Content="Сдача:" />
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Difference}" ContentStringFormat="C"  HorizontalAlignment="Right"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Итого:" Style="{StaticResource payViewLabelStyle}" />
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding TotalSum}" ContentStringFormat="C" Style="{StaticResource payViewValueStyle}"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Получено:"  Style="{StaticResource payViewLabelStyle}"/>
+            <TextBox Grid.Row="1"  Grid.Column="1" Text="{Binding GivenSum, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" Style="{StaticResource payViewTextBoxStyle}" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Сдача:"  Style="{StaticResource payViewLabelStyle}"/>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Change}" ContentStringFormat="C">
+                <Label.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChangeNegative}" Value="False">
+                                <Setter Property="TextElement.FontFamily" Value="Verdana" />
+                                <Setter Property="TextElement.FontSize" Value="20" />
+                                <Setter Property="FrameworkElement.HorizontalAlignment" Value="Right"/>
+                                <Setter Property="TextElement.Foreground" Value="#e84" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChangeNegative}" Value="True">
+                                <Setter Property="FrameworkElement.Opacity" Value="0" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
         </Grid>
 
         <Button IsCancel="True" Style="{StaticResource okButtonStyle}">Оплачено</Button>

@@ -55,7 +55,7 @@ namespace POS.ViewModel.Tests
 
             // add panel has been reinitialized
             Assert.IsNull(m.SelectedProduct);
-            Assert.AreEqual(0, m.Quantity);
+            Assert.AreEqual(1, m.Quantity);
 
             // total sum has been updated
             Assert.AreEqual(10, m.TotalSum);
@@ -88,7 +88,7 @@ namespace POS.ViewModel.Tests
 
             // add panel has been reinitialized
             Assert.IsNull(m.SelectedProduct);
-            Assert.AreEqual(0, m.Quantity);
+            Assert.AreEqual(1, m.Quantity);
 
             // DataGrid data has been removed
             Assert.IsFalse(m.Records.Any());
